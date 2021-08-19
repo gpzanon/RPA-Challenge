@@ -20,8 +20,7 @@ Monteiro Lobato (Teste); Brasília; Distrito Federal; 70722530; lobato@hotmail.c
 
 <h4>Etapa 3:  persistir dados no formulário no BD</h4>
 <h6>
-Coletar o retorno do status da mensagem enviada pelo formulário (Mensagem que o site mostra ao enviar o formulário, como, "Obrigado...").</br>
-Persistir essa informação de status no banco de dados criado na Etapa 1.
+Coletar o retorno do status da mensagem enviada pelo formulário (Mensagem que o site mostra ao enviar o formulário, como, "Obrigado..."). Persistir essa informação de status no banco de dados criado na Etapa 1.
 </h6></p>
 
 <h4>Orientações</h4>
