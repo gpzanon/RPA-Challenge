@@ -8,7 +8,7 @@ Assunto VARCHAR 1000, MensagemEnviada VARCHAR MAX, RetornoSite VARCHAR MAX).
 
 
 Etapa 2: automatizar formulário
-A partir de um arquivo CSV (anexo nesse repositorio) contendo os dados abaixo, automatize a inserção de dados a partir da URL:
+A partir do arquivo CONTATOS.CSV (nesse repositorio) contendo os dados abaixo, automatize a inserção de dados a partir da URL:
 http://seguralta.com.br/site/contato
 
 Nome; Cidade; Estado; CEP; Email; Telefone; Assunto; Mensagem
