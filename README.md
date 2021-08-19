@@ -13,9 +13,9 @@ A partir de um arquivo CSV (anexo nesse repositorio) contendo os dados abaixo, a
 http://seguralta.com.br/site/contato</p>
 
 Nome; Cidade; Estado; CEP; Email; Telefone; Assunto; Mensagem</br>
-Machado de Assis (Teste); SJR Preto; São Paulo; 15084220; ma@gmail.com; (17)981144461; Cotação; Preciso de uma cotação para veículo XPTO</br>
-Tarsila do Amaral (Teste); Curitiba; Paraná; 81830190; tarsila.amaral@gmail.com; (41)996574545; Dúvida; Como eu encontro em contato com meu corretor?</br>
-Monteiro Lobato (Teste); Brasília; Distrito Federal; 70722530; lobato@hotmail.com; (61)988241212; Sugestão; Buscar corretoras próximas a mim.
+Machado de Assis (Teste); SJR Preto; São Paulo; 15084220; ma@gmail.com; (17)981144461; Cotação; Preciso cotar seguro para veículo</br>
+Tarsila do Amaral (Teste); Curitiba; Paraná; 81830190; tarsila.amaral@gmail.com; (41)996574545; Dúvida; Como encontro em contato com meu corretor?</br>
+Monteiro Lobato (Teste); Brasília; Distrito Federal; 70722530; lobato@hotmail.com; (61)988241212; Sugestão; Buscar corretoras próximas a mim
 </h6>
 
 <h4>Etapa 3:  persistir dados no formulário no BD</h4>
