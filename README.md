@@ -2,8 +2,9 @@
 
 <h4>DEV RPA JR</h4>
 <h6>
-- acessar o arquivo TESTE DEV RPA-JR para as instruções</br>
-- utilizar o arquivo contatos.csv na automatização do formulário</br>
-- disponbilizar o banco de dados criado para persistir os dados do formulário</br>
-- disponbilizar o código de programa criado para análise</br>
+01. acessar o arquivo TESTE DEV RPA-JR para as instruções</br>
+02. utilizar o arquivo contatos.csv na automatização do formulário</br>
+03. disponbilizar a estrutura do banco de dados criado para persistir os dados do formulário</br>
+04. disponbilizar o código de programa criado para automatização do formulário</br>
+05. Orientação com o passo-a-passo para execução do código no README.md</br>
 </h6>
