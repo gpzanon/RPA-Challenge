@@ -1,6 +1,6 @@
 #RPA-Challenge: Desenvolvedor RPA Junior
 
-Etapa 1: criar o banco de dados de acordo com a seguinte modelagem
+Etapa 1: criar o banco de dados de acordo com a modelagem:
 
 Tabela Pessoa (Id PrimaryKey Identity, Nome VARCHAR 300, Cidade VARCHAR 300, Estado VARCHAR 150),
 Tabela Contato (Id INT Primary Key Identity, Pessoa INT Foreign Key tabela Pessoa, Email VARCHAR 150, DDD VARCHAR 3, Telefone VARCHAR 15),
@@ -9,8 +9,7 @@ Assunto VARCHAR 1000, MensagemEnviada VARCHAR MAX, RetornoSite VARCHAR MAX).
 
 
 Etapa 2: automatizar formulário
-A partir do arquivo CONTATOS.CSV (nesse repositorio) contendo os dados abaixo, automatize a inserção de dados a partir da URL:
-http://seguralta.com.br/site/contato
+A partir do arquivo CONTATOS.CSV (nesse repositorio) contendo os dados abaixo, automatize a inserção de dados a partir da URL: http://seguralta.com.br/site/contato
 
 Nome; Cidade; Estado; CEP; Email; Telefone; Assunto; Mensagem
 Machado de Assis (Teste); SJR Preto; São Paulo; 15084220; ma@gmail.com; (17)981144461; Cotação; Preciso cotar seguro para veículo
@@ -18,24 +17,31 @@ Tarsila do Amaral (Teste); Curitiba; Paraná; 81830190; tarsila.amaral@gmail.com
 Monteiro Lobato (Teste); Brasília; Distrito Federal; 70722530; lobato@hotmail.com; (61)988241212; Sugestão; Buscar corretoras próximas a mim
 
 
-Etapa 3: persistir dados no formulário no BD
-Coletar o retorno do status da mensagemapós envio da mensagem pelo formulário.
-Persistir essa informação de status no banco de dados criado na Etapa 1.
+Etapa 3: persistir dados inseridos no formulário web no BD
+Coletar o retorno do status da mensagem após envio da mensagem pelo formulário
+A partir do BD criado (Etapa 1) persistir as informações inseridas no formulário (Etapa 2) e o retorno do status da mensagem (Etapa 3)
 
 
-Orientações
+Orientações:
 Fork no repositório GIT gpzanon/RPA-Challenge
 Faça o desafio numa branch com o seu nome (exemplo: nome-sobrenome)
-Assim que concluir o seu desafio, abra um pull request com suas alterações
+Assim que concluir o seu desafio, abra um pull request com suas implementações/ alterações
+Deverão ser disponibilizados no GIT:
+  (a) Estrutura SQL utilizada para a criação do banco de dados criado (Etapa 1)
+  (b) O código do programa utilizado para na automatização do formulário (Etapa 2)
+  (c) Orientação com o passo-a-passo para execução do código no README.md
 
 
-O que será avaliado
+Tempo previsto para devolutiva do teste:
+2 dias
+
+O que será avaliado:
 Manutenabilidade, clareza e limpeza de código, resultado funcional, entre outros fatores
 O histórico no GIT também está avaliado
 Se necessário explique as decisões técnicas tomadas, as escolhas por bibliotecas e ferrramentas
 
 
-Diferenciais
+Diferenciais:
 Criar validações de erros, caso o dado não exista ou campo do formulário não existir
 Validações se os campos foram preenchidos corretamente
 Boa documentação de código e de serviços
