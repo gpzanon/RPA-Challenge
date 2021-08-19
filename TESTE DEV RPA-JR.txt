@@ -1,4 +1,5 @@
 #RPA-Challenge: Desenvolvedor RPA Junior
+
 Etapa 1: criar o banco de dados de acordo com a seguinte modelagem
 
 Tabela Pessoa (Id PrimaryKey Identity, Nome VARCHAR 300, Cidade VARCHAR 300, Estado VARCHAR 150),
@@ -16,19 +17,23 @@ Machado de Assis (Teste); SJR Preto; São Paulo; 15084220; ma@gmail.com; (17)981
 Tarsila do Amaral (Teste); Curitiba; Paraná; 81830190; tarsila.amaral@gmail.com; (41)996574545; Dúvida; Como encontro em contato com meu corretor?
 Monteiro Lobato (Teste); Brasília; Distrito Federal; 70722530; lobato@hotmail.com; (61)988241212; Sugestão; Buscar corretoras próximas a mim
 
+
 Etapa 3: persistir dados no formulário no BD
 Coletar o retorno do status da mensagemapós envio da mensagem pelo formulário.
 Persistir essa informação de status no banco de dados criado na Etapa 1.
+
 
 Orientações
 Fork no repositório GIT gpzanon/RPA-Challenge
 Faça o desafio numa branch com o seu nome (exemplo: nome-sobrenome)
 Assim que concluir o seu desafio, abra um pull request com suas alterações
 
+
 O que será avaliado
 Manutenabilidade, clareza e limpeza de código, resultado funcional, entre outros fatores
 O histórico no GIT também está avaliado
 Se necessário explique as decisões técnicas tomadas, as escolhas por bibliotecas e ferrramentas
+
 
 Diferenciais
 Criar validações de erros, caso o dado não exista ou campo do formulário não existir
