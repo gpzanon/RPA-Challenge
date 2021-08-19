@@ -22,7 +22,7 @@
 
 #### *O que será avaliado:*
 - *Manutenabilidade, clareza e limpeza de código, resultado funcional, entre outros fatores*
-- *O histórico no GIT também está avaliado*
+- *O histórico no GIT também será avaliado*
 - *Se necessário explique as decisões técnicas tomadas, as escolhas por bibliotecas e ferrramentas*
 
 #### *Diferenciais:*
