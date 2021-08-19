@@ -1,7 +1,10 @@
 #RPA-Challenge: Desenvolvedor RPA Junior
 Etapa 1: criar o banco de dados de acordo com a seguinte modelagem
 
-Tabela Pessoa (Id PrimaryKey Identity, Nome VARCHAR 300, Cidade VARCHAR 300, Estado VARCHAR 150), Tabela Contato (Id INT Primary Key Identity, Pessoa INT Foreign Key tabela Pessoa, Email VARCHAR 150, DDD VARCHAR 3, Telefone VARCHAR 15), Tabela StatusMensagemEnviada (Id INT Primary Key identity, Pessoa INT Foreign Key tabela Pessoa, Contato INT Foreign KeyTabela Contato, Assunto VARCHAR 1000, MensagemEnviada VARCHAR MAX, RetornoSite VARCHAR MAX).
+Tabela Pessoa (Id PrimaryKey Identity, Nome VARCHAR 300, Cidade VARCHAR 300, Estado VARCHAR 150),
+Tabela Contato (Id INT Primary Key Identity, Pessoa INT Foreign Key tabela Pessoa, Email VARCHAR 150, DDD VARCHAR 3, Telefone VARCHAR 15),
+Tabela StatusMensagemEnviada (Id INT Primary Key identity, Pessoa INT Foreign Key tabela Pessoa, Contato INT Foreign KeyTabela Contato,
+Assunto VARCHAR 1000, MensagemEnviada VARCHAR MAX, RetornoSite VARCHAR MAX).
 
 
 Etapa 2: automatizar formulário
