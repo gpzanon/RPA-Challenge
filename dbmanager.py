@@ -35,8 +35,8 @@ TABLES['status_mensagem_enviada'] = (
     "  `pessoa` int(11) NOT NULL,"
     "  `contato` int(11) NOT NULL,"
     "  `assunto` varchar(1000) NOT NULL,"
-    "  `mensagem_enviada` varchar(20000) NOT NULL,"
-    "  `retorno_site` varchar(20000) NOT NULL"
+    "  `mensagem_enviada` varchar(5000) NOT NULL,"
+    "  `retorno_site` varchar(5000) NOT NULL,"
     "  PRIMARY KEY (`id`),"
     "  CONSTRAINT `status_mensagem_enviada_ibfk_1` FOREIGN KEY (`pessoa`) "
     "     REFERENCES `pessoa` (`id`) ON DELETE CASCADE,"
@@ -45,7 +45,7 @@ TABLES['status_mensagem_enviada'] = (
     ") ENGINE=InnoDB")
 
 
-def load_db_cursor():
+def load_db():
     conn = config['connection']
     try:
         cnx = mysql.connector.connect(
@@ -54,14 +54,13 @@ def load_db_cursor():
             password=conn['password'],
             database=conn['database']
         )
-        return cnx.cursor()
+        return cnx
     except mysql.connector.Error as err:
         if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
             print("Usuário ou senha inválido(s)!")
         elif err.errno == errorcode.ER_BAD_DB_ERROR:
             print('Banco de dados "' + conn['database'] + '" não encontrado. Criando-o...')
-            create_database()
-            load_db_cursor()
+            return create_database()
         else:
             print(err)
 
@@ -76,7 +75,8 @@ def create_database():
         )
         cursor = cnx.cursor()
         try:
-            cursor.execute("CREATE DATABASE {} DEFAULT CHARACTER SET 'utf8'".format(conn['database']));
+            cursor.execute("CREATE DATABASE {} DEFAULT CHARACTER SET 'utf8'"
+                           .format(conn['database']))
         except mysql.connector.Error as err:
             print('Erro na criação do banco de dados: {}'.format(err))
             exit(1)
@@ -84,7 +84,7 @@ def create_database():
         for table_name in TABLES:
             table_description = TABLES[table_name]
             try:
-                print('Criando tabela {}: '.format(table_name, end=''))
+                print('Criando tabela {}: '.format(table_name), end='')
                 cursor.execute(table_description)
             except mysql.connector.Error as err:
                 if err.errno == errorcode.ER_TABLE_EXISTS_ERROR:
@@ -93,22 +93,12 @@ def create_database():
                     print(err.msg)
             else:
                 print('OK')
+        return cnx
     except mysql.connector.Error as err:
         if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
             print("Usuário ou senha inválido(s)!")
-        elif err.errno == errorcode.ER_BAD_DB_ERROR:
-            print('Banco de dados "' + conn['database'] + '" não encontrado. Criando-o...')
-            create_database()
-            load_db_cursor()
         else:
             print(err)
-
-        
-    except mysql.connector.Error as err:
-        print(err)
-
-
-cursor = load_db_cursor()
 
 
 def commit_form_data(data):
@@ -123,3 +113,17 @@ def commit_form_data(data):
                     "VALUES (%s, %s, %s, %s, %s)")
     
     data_pessoa = (data['nome'], data['cidade'], data['estado'])
+    cnx = load_db()
+    cursor = cnx.cursor()
+    cursor.execute(add_pessoa, data_pessoa)
+    id_pessoa = cursor.lastrowid
+    data_contato = (id_pessoa, data['email'], data['telefone'][:2],
+                    data['telefone'][2:])
+    cursor.execute(add_contato, data_contato)
+    id_contato = cursor.lastrowid
+    data_mensagem = (id_pessoa, id_contato, data['assunto'], data['mensagem'],
+                     data['status'])
+    cursor.execute(add_mensagem, data_mensagem)
+    cnx.commit()
+    cursor.close()
+    cnx.close()

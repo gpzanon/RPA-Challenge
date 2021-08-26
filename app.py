@@ -8,21 +8,18 @@ import configmanager
 
 
 config = configmanager.load_config()
-states = configmanager.load_states()
+states = configmanager.load_states(config)
+
 
 def state_code(state):
-    with open(config['states_file']) as sf:
-        states = [line.strip() for line in sf.readlines()]
-        try:
-            return states.index(state) + 1
-        except ValueError:
-            return 0
+    try:
+        return states.index(state) + 1
+    except ValueError:
+        return 0
 
 
 def state_from_code(id):
-    with open(config['states_file']) as sf:
-        states = [line.strip() for line in sf.readlines()]
-        return states[id]
+    return states[id-1]
 
 
 """
@@ -47,6 +44,7 @@ def convert_to_form_data(data):
         "estado": state_code(data["Estado"]),
         "cidade": data["Cidade"],
         "assunto": data["Assunto"],
+        "telefone": data["Telefone"],
         "mensagem": data["Mensagem"]
     }
     return fd
@@ -54,8 +52,9 @@ def convert_to_form_data(data):
 
 def post_form(form_data):
     res = requests.post(config['form_url'])
-    soup = bs4.BeautifulSoup(res.text)
+    soup = bs4.BeautifulSoup(res.text, 'lxml')
     alerts = soup.select('div.alert')
+    form_data['status'] = ''
     if len(alerts) > 0:
         status = alerts[0].get_text()
         form_data['status'] = status
