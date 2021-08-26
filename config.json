@@ -2,7 +2,7 @@
     "connection": {
         "host": "localhost",
         "user": "root",
-        "password": "backwards",
+        "password": "password",
         "database": "contatos"
     },
     "csv_file": "Contatos.csv",

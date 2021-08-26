@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import bs4
 import csv
 import requests
 
@@ -7,7 +8,7 @@ import configmanager
 
 
 config = configmanager.load_config()
-
+states = configmanager.load_states()
 
 def state_code(state):
     with open(config['states_file']) as sf:
@@ -16,6 +17,12 @@ def state_code(state):
             return states.index(state) + 1
         except ValueError:
             return 0
+
+
+def state_from_code(id):
+    with open(config['states_file']) as sf:
+        states = [line.strip() for line in sf.readlines()]
+        return states[id]
 
 
 """
@@ -47,16 +54,21 @@ def convert_to_form_data(data):
 
 def post_form(form_data):
     res = requests.post(config['form_url'])
-    form_data['status_code'] = res.status_code
+    soup = bs4.BeautifulSoup(res.text)
+    alerts = soup.select('div.alert')
+    if len(alerts) > 0:
+        status = alerts[0].get_text()
+        form_data['status'] = status
     return form_data
 
 
 def write_form_result(res):
-    dbmanager.insert_values(res)
+    dbmanager.commit_form_data(res)
 
 
 if __name__ == "__main__":
     data = load_csv_data(config["csv_file"])
     for row in data:
-        row = post_form(row)
+        res = post_form(row)
+        write_form_result(res)
 
