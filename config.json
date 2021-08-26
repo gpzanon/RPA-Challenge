@@ -1,0 +1,11 @@
+{
+    "connection": {
+        "host": "localhost",
+        "user": "root",
+        "password": "backwards",
+        "database": "contatos"
+    },
+    "csv_file": "Contatos.csv",
+    "form_url": "https://seguralta.com.br/site/contato",
+    "states_file": "estados.txt"
+}
