@@ -2,7 +2,7 @@
 
 ### *Etapa 1: criar o banco de dados de acordo com a modelagem*
 *Utilize SQL Express ou MySQL para criação dessa estrutura*
-*Esse banco de dados será utilizado para armazenar as informações que serão inseridos por meio do formulário (Etapa 2)*
+*Esse banco de dados será utilizado para armazenar as informações que serão inseridos por meio do formulário na Etapa 2*
 
 ***Tabela Pessoa** (Id PrimaryKey Identity, Nome VARCHAR 300, Cidade VARCHAR 300, Estado VARCHAR 150), ***Tabela Contato** (Id INT Primary Key Identity, Pessoa INT Foreign Key Tabela Pessoa, Email VARCHAR 150, DDD VARCHAR 3, Telefone VARCHAR 15), ***Tabela StatusMensagemEnviada** (Id INT Primary Key identity, Pessoa INT Foreign Key Tabela Pessoa, Contato INT Foreign Key Tabela Contato,Assunto VARCHAR 1000, MensagemEnviada VARCHAR MAX, RetornoSite VARCHAR MAX)*
 
