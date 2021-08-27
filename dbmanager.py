@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import mysql.connector
 import configmanager
+import re
 from mysql.connector import errorcode
 
 config = configmanager.load_config()
@@ -59,7 +60,8 @@ def load_db():
         if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
             print("Usuário ou senha inválido(s)!")
         elif err.errno == errorcode.ER_BAD_DB_ERROR:
-            print('Banco de dados "' + conn['database'] + '" não encontrado. Criando-o...')
+            print('Banco de dados "' + conn['database'] +
+                  '" não encontrado. Criando-o...')
             return create_database()
         else:
             print(err)
@@ -117,8 +119,13 @@ def commit_form_data(data):
     cursor = cnx.cursor()
     cursor.execute(add_pessoa, data_pessoa)
     id_pessoa = cursor.lastrowid
-    data_contato = (id_pessoa, data['email'], data['telefone'][:2],
-                    data['telefone'][2:])
+    ddd = ''
+    telefone = ''
+    match = re.search("\((\d{2,3})\)\s*(\d+)", data['telefone'])
+    if match:
+        ddd = match.group(1)
+        telefone = match.group(2)
+    data_contato = (id_pessoa, data['email'], ddd, telefone)
     cursor.execute(add_contato, data_contato)
     id_contato = cursor.lastrowid
     data_mensagem = (id_pessoa, id_contato, data['assunto'], data['mensagem'],

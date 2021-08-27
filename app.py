@@ -22,11 +22,6 @@ def state_from_code(id):
     return states[id-1]
 
 
-"""
-load_csv_data
-Carrega os dados do arquivo .csv e transforma os em dados aptos a serem usados
-na submissão do formulário.
-"""
 def load_csv_data(file_name):
     with open(file_name, newline='') as csvfile:
         data = []
@@ -53,7 +48,7 @@ def convert_to_form_data(data):
 def post_form(form_data):
     res = requests.post(config['form_url'])
     soup = bs4.BeautifulSoup(res.text, 'lxml')
-    alerts = soup.select('div.alert')
+    alerts = soup.select('.alert')
     form_data['status'] = ''
     if len(alerts) > 0:
         status = alerts[0].get_text()
@@ -62,6 +57,8 @@ def post_form(form_data):
 
 
 def write_form_result(res):
+    state = state_from_code(res['estado'])
+    res['estado'] = state
     dbmanager.commit_form_data(res)
 
 

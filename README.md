@@ -2,7 +2,7 @@
 ## Requisitos
 * Instale a versão Community do MySQL seguindo as instruções em https://www.mysqltutorial.org/install-mysql/
 * Python 3 (https://www.python.org/downloads/)
-* Bibliotecas Python `requests` e `mysql.connector`, instale usando o comando `python -m pip install requests mysql.connector`
+* Bibliotecas Python `requests`, `mysql.connector` e `beautifulsoup4`, instale usando o comando `python -m pip install requests mysql.connector beautifulsoup4`
 
 ## Uso
 * Extraia os arquivos do aplicativo em um diretório
