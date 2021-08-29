@@ -1,0 +1,112 @@
+{
+    "uf": [
+        {
+            "name": "Acre",
+            "value": 1
+        },
+        {
+            "name": "Alagoas",
+            "value": 2
+        },
+        {
+            "name": "Amazonas",
+            "value": 3
+        },
+        {
+            "name": "Amapá",
+            "value": 4
+        },
+        {
+            "name": "Bahia",
+            "value": 5
+        },
+        {
+            "name": "Ceará",
+            "value": 6
+        },
+        {
+            "name": "Distrito Federal",
+            "value": 7
+        },
+        {
+            "name": "Espírito Santo",
+            "value": 8
+        },
+        {
+            "name": "Goiás",
+            "value": 9
+        },
+        {
+            "name": "Maranhão",
+            "value": 10
+        },
+        {
+            "name": "Minas Gerais",
+            "value": 11
+        },
+        {
+            "name": "Mato Grosso do Sul",
+            "value": 12
+        },
+        {
+            "name": "Mato Grosso",
+            "value": 13
+        },
+        {
+            "name": "Pará",
+            "value": 14
+        },
+        {
+            "name": "Paraíba",
+            "value": 15
+        },
+        {
+            "name": "Pernambuco",
+            "value": 16
+        },
+        {
+            "name": "Piauí",
+            "value": 17
+        },
+        {
+            "name": "Paraná",
+            "value": 18
+        },
+        {
+            "name": "Rio de Janeiro",
+            "value": 19
+        },
+        {
+            "name": "Rio Grande do Norte",
+            "value": 20
+        },
+        {
+            "name": "Rondônia",
+            "value": 21
+        },
+        {
+            "name": "Roraima",
+            "value": 22
+        },
+        {
+            "name": "Rio Grande do Sul",
+            "value": 23
+        },
+        {
+            "name": "Santa Catarina",
+            "value": 24
+        },
+        {
+            "name": "Sergipe",
+            "value": 25
+        },
+        {
+            "name": "São Paulo",
+            "value": 26
+        },
+        {
+            "name": "Tocantins",
+            "value": 27
+        }
+    ]
+}
