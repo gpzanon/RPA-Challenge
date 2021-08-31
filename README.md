@@ -10,7 +10,7 @@
 *A implementação dessa solução poderá ser realizada na linguagem de programação que você tiver melhor afinidade*</br>
 *Realize testes para ter certeza que o que está sendo entregue cumprirá o objetivo (automatizar formulário), antes do **pull request***</br>
 
-*Utilize o arquivo CSV de [Contatos](https://github.com/gpzanon/RPA-Challenge/blob/main/Contatos.csv), para preencher o formulário já existente na página da Seguralta em [Fale com a Seguralta]( http://seguralta.com.br/site/contato). O solução deverá ser capaz de cadastrar automaticamente os contatos no formulário, sendo este o objetivo final desse desafio. Aas informações inseridas no formulário, bem como a mensagem de status obtida ao realizar o envio, deverão são persistidas no banco de dados criado na Etapa 1.*
+*Utilize o arquivo CSV de [Contatos](https://github.com/gpzanon/RPA-Challenge/blob/main/Contatos.csv), para preencher o formulário já existente na página da Seguralta em [Fale com a Seguralta]( http://seguralta.com.br/site/contato). O solução deverá ser capaz de cadastrar automaticamente os contatos no formulário, sendo este o objetivo final desse desafio. As informações inseridas no formulário, bem como a mensagem de status obtida ao realizar o envio, deverão são persistidas no banco de dados criado na Etapa 1.*
 
 
 ### *Orientações:*
