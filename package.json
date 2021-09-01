@@ -1,7 +1,7 @@
 {
   "name": "rpa",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Tecnologias: - NodeJS para desenvolvimento da aplicação - CSV-parse para manipulação de arquivos CSV - MySQL e Sequelize ORM para conexão, criação e manipulação do banco de dados  - Puppeteer para extração, manipulação e automatização do processo de cadastramento do formulário",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,5 +14,13 @@
     "mysql2": "^2.3.0",
     "puppeteer": "^10.2.0",
     "sequelize": "^6.6.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcusv92/RPA-Challenge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marcusv92/RPA-Challenge/issues"
+  },
+  "homepage": "https://github.com/marcusv92/RPA-Challenge#readme"
 }

@@ -1,9 +1,9 @@
 async function createTables(records) {
 
-  const database = require('./db')
-  const Pessoa = require('./models/pessoa');
-  const Contato = require('./models/contato');
-  const StatusMensagemEnviada = require('./models/statatusMensagemEnviada');
+  const database = require('./database/db')
+  const Pessoa = require('./database/models/pessoa');
+  const Contato = require('./database/models/contato');
+  const StatusMensagemEnviada = require('./database/models/statatusMensagemEnviada');
 
   Contato.belongsTo(Pessoa, {
     constraint: true,
@@ -42,7 +42,7 @@ async function createTables(records) {
       const resultadoCreate3 = await StatusMensagemEnviada.create({
         assunto: `${record.Assunto}`,
         mensagem: `${record.Mensagem}`,
-        retorno: '',
+        retorno: `${record.Retorno}`,
         idPessoa: idPessoa,
         idContato: idContato
       })
