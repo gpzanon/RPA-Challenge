@@ -45,6 +45,7 @@ async function rpa(record) {
   })
   record['Retorno'] = success;
 
+  return record;
 }
 
 module.exports.rpa = rpa;
