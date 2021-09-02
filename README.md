@@ -1,41 +1,26 @@
-# RPA-Challenge: Desenvolvedor RPA Junior
+Ambiente:
 
-### *Etapa 1: criar o banco de dados de acordo com a modelagem*
-*Utilize SQL Express ou MySQL para criação dessa estrutura*
-*Esse banco de dados será utilizado para armazenar as informações que serão inseridos por meio do formulário (Etapa 2)*
+    Ruby (versão utilizada para criação do projeto - 2.5.6p201) com DevKit https://rubyinstaller.org/downloads/
 
-***Tabela Pessoa** (Id PrimaryKey Identity, Nome VARCHAR 300, Cidade VARCHAR 300, Estado VARCHAR 150), ***Tabela Contato** (Id INT Primary Key Identity, Pessoa INT Foreign Key Tabela Pessoa, Email VARCHAR 150, DDD VARCHAR 3, Telefone VARCHAR 15), ***Tabela StatusMensagemEnviada** (Id INT Primary Key identity, Pessoa INT Foreign Key Tabela Pessoa, Contato INT Foreign Key Tabela Contato,Assunto VARCHAR 1000, MensagemEnviada VARCHAR MAX, RetornoSite VARCHAR MAX)*
+    Bundler (gem install bundler)
 
-### *Etapa 2: implementar solução para automatizar formulário*
-*A implementação dessa solução poderá ser realizada na linguagem de programação que você tiver melhor afinidade*</br>
-*Realize testes para ter certeza que o que está sendo entregue cumprirá o objetivo (automatizar formulário), antes do **pull request***</br>
+    Chromedriver configurado no path: Obs.1: faça o download em https://chromedriver.chromium.org/downloads (baixar de acordo com a versão do seu Chrome), descompacte em uma pasta (ex.: C:\chromedriver) Obs.2: na variável de ambiente PATH, incluir o caminho para a pasta do chromedriver (ex.: C:\chromedriver - sem o chromedriver.exe) - pode ser necessário reiniciar o sistema
 
-*Utilize o arquivo CSV de [Contatos](https://github.com/gpzanon/RPA-Challenge/blob/main/Contatos.csv), para preencher o formulário já existente na página da Seguralta em [Fale com a Seguralta]( http://seguralta.com.br/site/contato). O solução deverá ser capaz de cadastrar automaticamente os contatos no formulário, sendo este o objetivo final desse desafio. As informações inseridas no formulário, bem como a mensagem de status obtida ao realizar o envio, deverão são persistidas no banco de dados criado na Etapa 1.*
+    IDE: VSCode --- Extensões úteis: vscode-icons Cucumber (Gherkin) Full Support Ruby
 
+    Roteiro para UTILIZAR o projeto:
 
-### *Orientações:*
-- ***Fork** no repositório (https://github.com/gpzanon/RPA-Challenge)*
-- *Faça o desafio numa **branch** com o seu nome (exemplo:`nome-sobrenome`)*
-- *Assim que concluir o seu desafio, abra um **pull request** com suas implementações/ alterações*
-- *Deverão ser disponibilizados no GIT:*</br>
-  *(a) Estrutura SQL utilizada para a criação do banco de dados criado (Etapa 1)*</br>
-  *(b) O código-fonte do programa utilizado na automatização do formulário (Etapa 2)*</br>
-  *(c) Orientação com o passo-a-passo para execução do código a partir de um arquivo README.md*
+    Fazer o clone do projeto
+    Abrir a pasta no VSCode
+    Abrir o terminal (do VSCode, ou o da sua preferência e navegar até a pasta do projeto) e rodar o comando 'bundle install'
+    Para rodar os cenários, utilizar o comando de run do Cucumber: ex.:
 
-#### *Tempo de esforço previsto*:
-- *Recomendamos dispensar até, no máximo 2 dias, nesse teste*
+    rodar todos os cenários: 'cucumber'
 
-#### *O que será avaliado:*
-- *Manutenabilidade, clareza e limpeza de código, resultado funcional, entre outros fatores*
-- *O histórico no `Git` também será avaliado*
-- *Se necessário explique as decisões técnicas tomadas, as escolhas por bibliotecas e ferrramentas*
+    rodar uma feature: cucumber features/specs/01-cadastro_fixo.feature
 
-#### *Diferenciais:*
-- *Criar validações de erros, caso o dado não exista ou campo do formulário não existir*
-- *Validações se os campos foram preenchidos corretamente*
-- *Boa documentação de código e de serviços*</p>
+    rodar um cenário pela tag: cucumber -t @cadastro_valido_fixo_pf
 
+    rodar todos os cenários por tag: cucumber -t @regressivo
 
-##### *Em caso de dúvidas, envie um email para [Helder Donda](mailto:helder.dev@seguralta.com.br) ou [Aline Pappa](mailto:aline.dev@seguralta.com.br)*
-*Um dos nossos pilares é a valorização das pessoas e temos orgulho de dizer que somos uma empresa que apoia a diversidade e inclusão. Sendo assim, consideramos todos os candidatos para as nossas oportunidades, independente de raça, cor, religião, gênero, identidade de gênero, nacionalidade, deficiência, ascendência ou idade.*
-
+  
