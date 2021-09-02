@@ -1,6 +1,9 @@
 Ambiente:
-
-    Ruby (versão utilizada para criação do projeto - 2.5.6p201) com DevKit https://rubyinstaller.org/downloads/
+ 
+Tive dificuldades em fazer automação e testes com o banco dados.
+Neste projeto foi feito a automação no front-end
+     
+    Ruby (versão utilizada para criação do projeto - 3.0.0.p201) com DevKit https://rubyinstaller.org/downloads/
 
     Bundler (gem install bundler)
 
@@ -17,9 +20,9 @@ Ambiente:
 
     rodar todos os cenários: 'cucumber'
 
-    rodar uma feature: cucumber features/specs/01-cadastro_fixo.feature
+    rodar uma feature: cucumber features/01-contato.feature
 
-    rodar um cenário pela tag: cucumber -t @cadastro_valido_fixo_pf
+    rodar um cenário pela tag: cucumber -t 
 
     rodar todos os cenários por tag: cucumber -t @regressivo
 
